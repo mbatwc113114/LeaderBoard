@@ -1,41 +1,119 @@
-body {
-    font-family: Hack, monospace;
-    background: #121212;
-    color: #fff;
+/* General Styles */
+html, body{
+  background: url('/home/anirban/programming/github/LeaderBoard/bg_1.JPG') no-repeat center center fixed;
+  margin: 0;
+  padding:0;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  align-items: center;
+  color: white;
+  overflow-x:hidden;
+}
+@keyframes glow {
+    0% { text-shadow: 0 0 5px white; }
+    50% { text-shadow: 0 0 20px white; }
+    100% { text-shadow: 0 0 5px white; }
+}
+
+#stuff{
+  color: white;
+  font-size: 50px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: glow 3s infinite alternate;
+}
+/* Header */
+#header {
+    width: 100%;
+    max-width: 100vw; /* Ensures header never exceeds screen width */
+    overflow: hidden; /* Prevents accidental overflow */
+    display: flex;
+    backdrop-filter: blur(3px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    box-sizing: border-box; /* Prevents extra width due to padding */ 
+}
+
+
+.header-img {
+    height: 50px;
+    width: auto;
+    max-height: 100px;
+    min-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.left {
+  left:10px;
+}
+
+.right {
+  height: 65px;
+  right: 10px;
+}
+
+/* Background Image */
+
+/* Leaderboard Section */
+.leaderboard-container {
+    width: 50%;
+    margin-top: 100px;
     text-align: center;
-    padding: 50px;
+    position: absolute;
+    left:25%;
+    right:25$;
 }
 
-h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
+.white-line{
+  width: 100%;
+  height: 2px;
+  background: white;
+  box-shadow: 0 0 10px white, 0 0 10px white;
+  margin: 20px 0;
 }
-
+/* Blur Effect for Leaderboard */
 .leaderboard {
-    margin: 20px auto;
-    width: 300px;
     background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
 }
 
-.leaderboard div {
-    font-size: 1.5rem;
-    margin: 10px 0;
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
-.view-button {
-    background: #ff6600;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: white;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background 0.3s;
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.view-button:hover {
-    background: #ff3300;
+th {
+    background: rgba(255, 255, 255, 0.2);
 }
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .leaderboard-container {
+        width: 80%;
+    }
+
+    .header-img {
+        height: 50px;
+    }
+
+    .background{
+      background-size: contain;
+      background-position: top center;
+    }
+}
+
+
+
