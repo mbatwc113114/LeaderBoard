@@ -8,6 +8,9 @@ html, body{
   align-items: center;
   color: white;
   overflow-x:hidden;
+    height: 100vh;
+    background-size: cover;
+
 }
 @keyframes glow {
     0% { text-shadow: 0 0 5px white; }
@@ -42,7 +45,7 @@ html, body{
     height: 50px;
     width: auto;
     max-height: 100px;
-    min-height: 40px;
+    min-height: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -53,7 +56,6 @@ html, body{
 
 .right {
   height: 65px;
-  right: 10px;
 }
 
 /* Background Image */
@@ -64,8 +66,13 @@ html, body{
     margin-top: 100px;
     text-align: center;
     position: absolute;
-    left:25%;
-    right:25$;
+}
+
+.center-wrapper{
+  flex: 1;  /* Pushes content to center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .white-line{

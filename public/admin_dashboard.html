@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Admin Dashboard</h1>
+        <div class="button-container">
+            <button onclick="redirectTo('robo-race.html')">Robo-Race</button>
+            <button onclick="redirectTo('robo-wars.html')">Robo-Wars</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page; // Redirect in the same tab
+        }
+    </script>
+</body>
+</html>
+
