@@ -1,0 +1,45 @@
+/* Center everything */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Buttons side by side */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Button styling */
+button {
+    width: 150px;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(0deg, #ff6600, #cc3300);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(0deg, #ff3300, #ff6600);
+}
+
