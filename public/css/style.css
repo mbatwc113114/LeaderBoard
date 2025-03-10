@@ -77,8 +77,8 @@ html, body{
 }
 /* Blur Effect for Leaderboard */
 .leaderboard {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
     padding: 20px;
     border-radius: 10px;
 }
@@ -88,6 +88,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 th, td {
