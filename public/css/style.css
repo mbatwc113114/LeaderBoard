@@ -9,7 +9,6 @@ html, body{
   color: white;
   overflow-x:hidden;
     height: 100vh;
-    background-size: cover;
 
 }
 @keyframes glow {
@@ -28,7 +27,7 @@ html, body{
 #header {
     width: 100%;
     max-width: 100vw; /* Ensures header never exceeds screen width */
-    /*overflow: hidden; /* Prevents accidental overflow */
+    overflow: hidden; /* Prevents accidental overflow */
     display: flex;
     backdrop-filter: blur(3px);
     justify-content: space-between;
@@ -45,7 +44,7 @@ html, body{
     height: 50px;
     width: auto;
     max-height: 100px;
-    min-height: 20px;
+    min-height: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -66,14 +65,10 @@ html, body{
     margin-top: 100px;
     text-align: center;
     position: absolute;
+    left:25%;
+    right:25%;
 }
 
-.center-wrapper{
-  flex: 1;  /* Pushes content to center */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .white-line{
   width: 100%;
