@@ -11,31 +11,20 @@ html, body{
     height: 100vh;
 
 }
-@keyframes glow {
-    0% { text-shadow: 0 0 5px white; }
-    50% { text-shadow: 0 0 20px white; }
-    100% { text-shadow: 0 0 5px white; }
-}
 
-#stuff{
-  color: white;
-  font-size: 50px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  animation: glow 3s infinite alternate;
-}
 /* Header */
 #header {
+    display: flex;
     width: 100%;
     max-width: 100vw; /* Ensures header never exceeds screen width */
-    overflow: hidden; /* Prevents accidental overflow */
+    overflow: visible; /* show overflow */
     display: flex;
-    backdrop-filter: blur(3px);
     justify-content: space-between;
-    align-items: center;
+    backdrop-filter: blur(3px);
     padding: 0 20px;
     margin-bottom: 30px;
-    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
     box-sizing: border-box; /* Prevents extra width due to padding */ 
 }
 
@@ -43,63 +32,74 @@ html, body{
 .header-img {
     height: 50px;
     width: auto;
-    max-height: 100px;
-    min-height: 40px;
-    margin-top: 10px;
+    max-height: 150px;
+    min-height: 20px;
     margin-bottom: 10px;
 }
 
-.left {
-  left:10px;
+.center{
+  position: absolute;
+  height: 200px;
+  left:27.5%;
 }
 
-.right {
-  height: 65px;
+.left{
+  margin-top:10px;
+}
+.right{
+  margin-top:10px;
+  height: 70px;
 }
 
-/* Background Image */
 
-/* Leaderboard Section */
-.leaderboard-container {
-    width: 50%;
-    margin-top: 100px;
-    text-align: center;
+
+.center-box {
     position: absolute;
-    left:25%;
-    right:25%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw; /* Adjust as needed */
+    height: 60vh; /* Adjust as needed */
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    border-radius: 20px; /* Curved edges */
+    backdrop-filter: blur(2px); /* Blur effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
 }
 
-
-.white-line{
-  width: 100%;
-  height: 2px;
-  background: white;
-  box-shadow: 0 0 10px white, 0 0 10px white;
-  margin: 20px 0;
-}
-/* Blur Effect for Leaderboard */
-.leaderboard {
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    margin-bottom: 20px;
+.button {
+    width: 50%; /* Each button takes half of the box */
+    height: 100%; /* Full height */
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 10px white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
 }
 
-th, td {
-    padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+.left-button {
+    /*background: rgba(255, 0, 0, 0.6); /* Red for Admin */
+    border-radius: 20px 0 0 20px; /* Rounded left */
 }
 
-th {
-    background: rgba(255, 255, 255, 0.2);
+.right-button {
+    /*background: rgba(0, 0, 255, 0.6); /* Blue for Leaderboard */
+    border-radius: 0 20px 20px 0; /* Rounded right */
+}
+
+.button:hover {
+    box-shadow: 0 0 10px white;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 /* Make it responsive */
