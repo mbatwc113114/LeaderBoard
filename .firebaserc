@@ -1,5 +1,11 @@
 {
   "projects": {
     "default": "leaderboard-89e30"
-  }
+  },
+  "hosting": {
+    "site": "leaderboard",
+    "source": {
+      "repo": "LeaderBoard",
+      "branch": "main"
+    }}
 }
