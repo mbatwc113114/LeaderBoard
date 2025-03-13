@@ -6,5 +6,10 @@
       "**/.*",
       "**/node_modules/**"
     ]
+    ,"rewrites": [
+      {
+        "source": "/admin",
+        "destination": "/admin_login.html"
+      }]
   }
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/admin_style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- raw template of the form for backend -->
+
+    <div class="box">
+        <div class="button-container">
+            <button onclick="redirectTo('roborace.html')">Robo-Race</button>
+            <!-- <button onclick="redirectTo('roboware.html')">Robo-Wars</button> -->
+            <button onclick="redirectTo('addTeam.html')">add-teams</button>
+        </div>
+        <div class="header">
+            <h1>Update Roboware</h1>
+            <button id="addTeam">Add team</button>
+        </div>
+    </div>
+
+    <div class="updateScore">
+        <form>
+            <select id="teamName-robowar">
+                <option value="">Select Team</option>
+            </select>
+            <input type="text" name="team_score" placeholder="Team Score" id="teamScore">
+            <input type="button" value="Update Score" id="UpdateScore-robowar">
+        </form>
+    </div>
+    
+
+
+    <script src="js/script.js"></script>
+    <script type="module" src="js/firebase.js" async defer></script>
+    <script type="module" src="js/updateRobowar.js" async defer></script>
+</body>
+</html>

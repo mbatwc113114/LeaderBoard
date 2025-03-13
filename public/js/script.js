@@ -22,3 +22,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     }
 });
 
+
+function redirectTo(page) {
+    window.location.href = page; // Redirect in the same tab
+}
