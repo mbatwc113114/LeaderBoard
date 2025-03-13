@@ -1,6 +1,6 @@
 /* General Styles */
 html, body{
-  background: url('../resources/bg_1.JPG') no-repeat center center fixed;
+  background: url('../resources/27.jpg') no-repeat center center fixed;
   margin: 0;
   padding:0;
   font-family: Arial, sans-serif;
@@ -29,43 +29,89 @@ html, body{
   position: absolute;
   justify-content: center;
   transform: translate(112.5%, -30%);
-
 }
-/* Leaderboard Section */
+
+
+/* Leaderboard */ 
+/*
+.leaderboard-container{
+  transform: translate(0, 300%);
+}
+*/ 
+
+
 .leaderboard-container {
-    width: 50%;
-    margin-top: 100px;
-    text-align: center;
-    position: absolute;
-    left:25%;
-    right:25%;
+    display: flex;
+    flex-direction: column; /* Ensures items are stacked properly */
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-start; /* Ensures it doesn’t push down */
+    position: absolute; /* Or fixed, depending on your layout */
+    top: 20%; /* Adjust as needed */
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%; /* Adjust width as needed */
+    max-height: 80vh; /* Prevents it from growing indefinitely */
+    overflow-y: auto; /* Adds scrolling if content overflows */
 }
 
 
-
-/* Blur Effect for Leaderboard */
 .leaderboard {
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(5px);
-    padding: 20px;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(2px);
 }
 
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-th, td {
+.leaderboard-header{
+    display: flex;
+    justify-content: space-around;
     padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 15px 15px 0 0;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 5px white;
+    backdrop-filter: blur(3px);
 }
 
-th {
-    background: rgba(255, 255, 255, 0.2);
+.leaderboard-entry {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:10px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.details {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.leaderboard-entry:hover .details {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+
+    opacity: 1;
+    height: auto;
+}
+
+
+.expanded-details {
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 /* Make it responsive */
@@ -83,6 +129,5 @@ th {
       background-position: top center;
     }
 }
-
 
 

@@ -1,22 +1,48 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main LeaderBoard</title>
     <link rel="stylesheet" href="css/leaderboard_main.css">
-</head>
-<body>
+    <script src="js/leaderboard.js"></script>
+  </head>
+  <body>
     <header id="header">
-     <img src="resources/leaderboard.png" alt="LeaderBoard" class="header-img"> 
+      <img src="resources/leaderboard.png" alt="LeaderBoard" class="header-img"> 
     </header>
      <div class="leaderboard-container">
-        <div class="leaderboard">
-            <span>#1</span>
-            <span>Team Alpha</span>
-            <span>100 pts</span>
+      <div class="leaderboard">
+        <div class="leaderboard-header">
+          <span class="rank-header">Rank</span>
+          <span class="name-header">Team Name</span>
+          <span class="points-header">Points</span>
         </div>
+        
+        <div class="leaderboard-entry" id="something hide">
+          <span class="rank">1</span>
+          <span class="name">Team One</span>
+          <span class="points">190</span>
+        <!-- Hidden details -->
+          <div class="details" id="hide">
+            <div class="robo-race">
+              <h3>Robo-Race</h3>
+              <p>Best Time: <span class="race-time">--</span></p>
+            </div>
+            <div class="robo-war">
+              <h3>Robo-Wars</h3>
+              <p>Best Time: <span class="war-time">--</span></p>
+              <p>Points: <span class="war-points">--</span></p>
+            </div>
+          </div>  
+
+        </div>
+
+      </div>
     </div>
-</body>
+  </body>
 </html>
+
+
+<!-- this code isnt correctly working for the display of details.. review css/leaderboard_main.css and fix it  -->
