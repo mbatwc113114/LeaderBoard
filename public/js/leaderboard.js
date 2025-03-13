@@ -5,29 +5,19 @@
 });
 */
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("something");
-   const hid = document.getElementById("hide");
-    if (btn) { 
+    const hid = document.getElementById("hide");
 
-        btn.addEventListener("mouseover", function() {
-            let detailsDiv = btn.nextElementSibling; 
-            if (hid) { 
-                hid.classList.remove("details");
-                hid.classList.add("expanded-details");
-            }
+    if (btn && hid) {
+        btn.addEventListener("mouseover", function () {
+            hid.classList.add("active"); // Apply expansion
         });
 
-        btn.addEventListener("mouseout", function() {
-            let detailsDiv = btn.nextElementSibling; 
-            if (hid) { 
-                hid.classList.remove("expanded-details");
-                hid.classList.add("details");
-            }
+        btn.addEventListener("mouseout", function () {
+            hid.classList.remove("active"); // Remove expansion
         });
-
     } else {
-        console.error("Element with id 'something' not found!");
+        console.error("Element with id 'something' or 'hide' not found!");
     }
-}); // This is the correct closing brace
-
+});
