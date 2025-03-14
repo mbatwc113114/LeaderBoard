@@ -9,7 +9,7 @@ html, body{
   color: white;
   overflow-x:hidden;
   height: 100vh;
-
+}
 #header {
     display: flex;
     width: 100%;
@@ -18,17 +18,17 @@ html, body{
     overflow: visible; /* show overflow */
     backdrop-filter: blur(3px);
     padding: 0 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
     box-sizing: border-box; /* Prevents extra width due to padding */ 
+    justify-content: center;
+    padding-bottom: 10px;
+    
 }
 
 .header-img{
-  height: 250px;
-  position: absolute;
-  justify-content: center;
-  transform: translate(112.5%, -30%);
+  height: 300px;
 }
 
 
@@ -45,13 +45,14 @@ html, body{
     flex-direction: column; /* Ensures items are stacked properly */
     align-items: center; /* Centers content horizontally */
     justify-content: flex-start; /* Ensures it doesn’t push down */
-    position: absolute; /* Or fixed, depending on your layout */
-    top: 20%; /* Adjust as needed */
+    position: absolute; /*pending on your layout */
+    top: 200px;/*djust as needed */
     left: 50%;
     transform: translate(-50%, 0);
     width: 80%; /* Adjust width as needed */
     max-height: 80vh; /* Prevents it from growing indefinitely */
     overflow-y: auto; /* Adds scrolling if content overflows */
+    
 }
 
 
