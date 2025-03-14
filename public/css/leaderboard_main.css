@@ -9,7 +9,7 @@ html, body{
   color: white;
   overflow-x:hidden;
   height: 100vh;
-
+}
 #header {
     display: flex;
     width: 100%;
@@ -18,17 +18,17 @@ html, body{
     overflow: visible; /* show overflow */
     backdrop-filter: blur(3px);
     padding: 0 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
     box-sizing: border-box; /* Prevents extra width due to padding */ 
+    justify-content: center;
+    padding-bottom: 10px;
+    
 }
 
 .header-img{
-  height: 250px;
-  position: absolute;
-  justify-content: center;
-  transform: translate(112.5%, -30%);
+  height: 300px;
 }
 
 
@@ -45,13 +45,14 @@ html, body{
     flex-direction: column; /* Ensures items are stacked properly */
     align-items: center; /* Centers content horizontally */
     justify-content: flex-start; /* Ensures it doesn’t push down */
-    position: absolute; /* Or fixed, depending on your layout */
-    top: 20%; /* Adjust as needed */
+    position: absolute; /*pending on your layout */
+    top: 200px;/*djust as needed */
     left: 50%;
     transform: translate(-50%, 0);
     width: 80%; /* Adjust width as needed */
     max-height: 80vh; /* Prevents it from growing indefinitely */
     overflow-y: auto; /* Adds scrolling if content overflows */
+    
 }
 
 
@@ -62,7 +63,7 @@ html, body{
     margin: auto;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
 }
 
 .leaderboard-header{
@@ -80,6 +81,7 @@ html, body{
 
 .leaderboard-entry {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding:10px;
@@ -89,29 +91,117 @@ html, body{
     transition: all 0.3s ease;
 }
 
+
+.elements-inside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%; /* Ensures the container takes full width */
+}
+
+.elements-inside span {
+    flex: 1; /* Distributes equal space among the spans */
+    text-align: center; /* Centers the text inside each span */
+}
+
+.leaderboard-entry:hover .elements-inside{
+  text-shadow: 0 0 10px white;
+  font-weight: bold;
+}
+
 .details {
     visibility: hidden;
+    display: none;
     opacity: 0;
     height: 0;
     overflow: hidden;
     transition: opacity 0.3s ease, height 0.3s ease;
 }
 
-.leaderboard-entry:hover .details {
+.leaderboard-entry:hover .details{
     visibility: visible;
     display: flex;
-    flex-direction: column;
-
+    flex-direction: row;
     opacity: 1;
     height: auto;
 }
 
 
+
 .expanded-details {
     display: flex;
-    flex-direction: column;
-    transition: max-height 0.3s ease-in-out;
+    flex-direction: column; /* Ensures vertical expansion */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.nigga{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 150px;
+  width: 100;
+}
+
+.expanded-details.active {
+    max-height: 500px; /* Adjust this value based on your content */
+}
+
+.robo-race .robo-war {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Equal width distribution */
+}
+.robo-race{
+  font-size: 15px;
+}
+.race, .war{
+  height: 40px;
+  width: auto;
+}
+
+
+.robo-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.robo-table th, .robo-table td {
+    border: 1px solid white;
+    padding: 8px;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+}
+
+.robo-table th {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+/* Rounded corners */
+.robo-table th:first-child {
+    border-top-left-radius: 10px;
+}
+.robo-table th:last-child {
+    border-top-right-radius: 10px;
+}
+.robo-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.robo-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
 }
 
 /* Make it responsive */

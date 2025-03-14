@@ -9,6 +9,7 @@
     <script src="js/leaderboard.js"></script>
   </head>
   <body>
+    
     <header id="header">
       <img src="resources/leaderboard.png" alt="LeaderBoard" class="header-img"> 
     </header>
@@ -21,19 +22,37 @@
         </div>
         
         <div class="leaderboard-entry" id="something hide">
-          <span class="rank">1</span>
-          <span class="name">Team One</span>
-          <span class="points">190</span>
-        <!-- Hidden details -->
-          <div class="details" id="hide">
+         <div class="elements-inside" id="something">
+            <span class="rank">1</span>
+            <span class="name">Team One</span>
+            <span class="points">190</span>
+
+         </div>
+          
+                  <!-- Hidden details -->
+
+          <div class="details nigga" id="hide">
             <div class="robo-race">
-              <h3>Robo-Race</h3>
+              <img src="resources/roborace.png" alt="Robo Race" class="race">
+              <hr>
               <p>Best Time: <span class="race-time">--</span></p>
+              <p>Points: <span class="race-points">--</span></p>
             </div>
             <div class="robo-war">
-              <h3>Robo-Wars</h3>
-              <p>Best Time: <span class="war-time">--</span></p>
-              <p>Points: <span class="war-points">--</span></p>
+              <img src="resources/robowar.png" alt="robo war" class="war">
+              <hr>
+              <table class="robo-table">
+                <tr>
+                    <th>M.No</th>
+                    <th>Best Time</th>
+                    <th>Points</th>
+                </tr>
+                <tr>
+                    <td class="match-number">1</td>
+                    <td class="best-time">--</td>
+                    <td class="war-points">--</td>
+                </tr>
+            </table>
             </div>
           </div>  
 
@@ -41,6 +60,7 @@
 
       </div>
     </div>
+   
   </body>
 </html>
 
