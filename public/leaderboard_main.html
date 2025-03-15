@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main LeaderBoard</title>
     <link rel="stylesheet" href="css/leaderboard_main.css">
-    <script src="js/leaderboard.js"></script>
   </head>
   <body>
     
@@ -14,22 +13,22 @@
       <img src="resources/leaderboard.png" alt="LeaderBoard" class="header-img"> 
     </header>
      <div class="leaderboard-container">
-      <div class="leaderboard">
-        <div class="leaderboard-header">
-          <span class="rank-header">Rank</span>
+       <div class="leaderboard">
+         <div class="leaderboard-header">
+           <span class="rank-header">Rank</span>
           <span class="name-header">Team Name</span>
           <span class="points-header">Points</span>
         </div>
         
         <div class="leaderboard-entry" id="something hide">
-         <div class="elements-inside" id="something">
+          <div class="elements-inside" id="something">
             <span class="rank">1</span>
-            <span class="name">Team One</span>
-            <span class="points">190</span>
-
-         </div>
+            <span class="name">-----</span>
+            <span class="points">-----</span>
+            
+          </div>
           
-                  <!-- Hidden details -->
+          <!-- Hidden details -->
 
           <div class="details nigga" id="hide">
             <div class="robo-race">
@@ -43,24 +42,26 @@
               <hr>
               <table class="robo-table">
                 <tr>
-                    <th>M.No</th>
-                    <th>Best Time</th>
+                  <th>M.No</th>
+                  <th>Best Time</th>
                     <th>Points</th>
-                </tr>
-                <tr>
+                  </tr>
+                  <tr>
                     <td class="match-number">1</td>
                     <td class="best-time">--</td>
                     <td class="war-points">--</td>
-                </tr>
-            </table>
+                  </tr>
+                </table>
             </div>
           </div>  
-
+          
         </div>
 
       </div>
     </div>
-   
+    
+    <script type="module" src="js/firebase.js" async defer></script>
+    <script type="module" src="js/leaderboard.js" async defer></script>
   </body>
 </html>
 

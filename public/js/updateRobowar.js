@@ -28,19 +28,23 @@ get(teamsRef).then((snapshot) => {
 document.getElementById("UpdateScore-robowar").addEventListener("click", function () {
     let selectedTeam = document.getElementById("teamName-robowar").value;
     let newScore = document.getElementById("teamScore").value.trim();
+    let newTime = document.getElementById("teamTime").value.trim();
+    const updateData = {}; // Create an empty object
 
-    if (selectedTeam === "" || newScore === "") {
-        alert("Please select a team and enter a score!");
-        return;
+    if (newScore !== "") {
+        updateData.robowarScore = newScore;
     }
-
+    
+    if (newTime !== "") {
+        updateData.robowarTime = newTime;
+    }
     // Update Firebase Realtime Database
     const teamRef = ref(database, "teams/" + selectedTeam);
 
-    update(teamRef, { robowarScore: newScore })
+    update(teamRef, updateData)
         .then(() => {
             alert("✅ Score Updated Successfully!");
-            console.log(`✅ Updated ${selectedTeam}'s score to ${newScore}`);
+            console.log(`✅ Updated ${selectedTeam}`);
         })
         .catch((error) => {
             console.error("❌ Error updating score:", error);

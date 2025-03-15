@@ -37,4 +37,3 @@ addTeamBTN.addEventListener("click", async () => {
         alert("Error checking team ID: " + error.message);
     }
 });
-
