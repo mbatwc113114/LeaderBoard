@@ -1,6 +1,7 @@
 function renderTeams(data) {
     console.log("✅ Rendering teams:", data);
 
+    // Clear and reset leaderboard before adding new data
     leaderboardContainer.innerHTML = `
         <div class="leaderboard-header">
             <span class="rank-header">Rank</span>
@@ -26,28 +27,27 @@ function renderTeams(data) {
         };
     });
 
-    // Sort in descending order based on total points
+    // Sort teams in descending order based on total points
     teamsArray.sort((a, b) => b.totalPoints - a.totalPoints);
 
     console.log("🔢 Sorted teams array:", teamsArray);
 
-    let currentRank = 1; // Start ranking from 1
-    let previousPoints = null; // To handle ranking for ties
+    let currentRank = 1; 
+    let previousPoints = null;
 
+    // Append sorted teams to leaderboard
     teamsArray.forEach((team, index) => {
-        // If points are the same as the previous team, maintain rank
         if (team.totalPoints !== previousPoints) {
-            currentRank = index + 1; // Update rank only if points change
+            currentRank = index + 1; // Assign new rank when points change
         }
-
-        previousPoints = team.totalPoints; // Store the last team's points
+        previousPoints = team.totalPoints;
 
         const entryDiv = document.createElement("div");
         entryDiv.classList.add("leaderboard-entry");
 
         entryDiv.innerHTML = `
             <div class="elements-inside">
-                <span class="rank">${currentRank}</span> 
+                <span class="rank">${currentRank}</span>
                 <span class="name">${team.name}</span>
                 <span class="points">${team.totalPoints}</span>
             </div>
@@ -80,3 +80,16 @@ function renderTeams(data) {
         leaderboardContainer.appendChild(entryDiv);
     });
 }
+
+// Firebase Listener to fetch & update data in real-time
+const teamsRef = ref(database, "teams");
+
+onValue(teamsRef, (snapshot) => {
+    const data = snapshot.val();
+    if (data) {
+        renderTeams(data);
+        console.log("✅ Teams fetched & updated from the database:", data);
+    } else {
+        console.warn("⚠️ No teams found in the database.");
+    }
+});
