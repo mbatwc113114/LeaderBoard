@@ -11,15 +11,15 @@ function renderTeams(data) {
 
     // Convert object to array and compute total points
     const teamsArray = Object.entries(data).map(([id, value]) => {
-        const roboraceScore = parseInt(value.roboraceScore) || 0;
-        const robowarScore = parseInt(value.robowarScore) || 0;
+        const roboraceScore = Number(value.roboraceScore) || 0;
+        const robowarScore = Number(value.robowarScore) || 0;
         const totalPoints = roboraceScore + robowarScore;
 
         return {
             id,
             name: value.teamName || "Unknown Team",
             roboraceScore,
-            roboraceTime: value.roboraceTime || 0,
+            roboraceTime: value.roboraceTime || "--",
             robowarScore,
             robowarTime: value.robowarTime || "--",
             totalPoints,
@@ -31,13 +31,23 @@ function renderTeams(data) {
 
     console.log("🔢 Sorted teams array:", teamsArray);
 
+    let currentRank = 1; // Start ranking from 1
+    let previousPoints = null; // To handle ranking for ties
+
     teamsArray.forEach((team, index) => {
+        // If points are the same as the previous team, maintain rank
+        if (team.totalPoints !== previousPoints) {
+            currentRank = index + 1; // Update rank only if points change
+        }
+
+        previousPoints = team.totalPoints; // Store the last team's points
+
         const entryDiv = document.createElement("div");
         entryDiv.classList.add("leaderboard-entry");
 
         entryDiv.innerHTML = `
             <div class="elements-inside">
-                <span class="rank">${index + 1}</span>
+                <span class="rank">${currentRank}</span> 
                 <span class="name">${team.name}</span>
                 <span class="points">${team.totalPoints}</span>
             </div>
